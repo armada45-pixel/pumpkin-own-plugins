@@ -1,0 +1,15 @@
+[workspace]
+resolver = "3"
+members = ["inventory-totem"]
+
+[workspace.package]
+edition = "2024"
+
+[workspace.dependencies]
+# The plugin SDK is MIT OR Apache-2.0. Pinned to the Pumpkin revision the plugins are tested against.
+pumpkin-plugin-api = { git = "https://github.com/Pumpkin-MC/Pumpkin", rev = "eda69440e6369c5f8a05c3f69fc809c40dab93a6" }
+
+[profile.release]
+opt-level = "s"
+lto = true
+strip = true
