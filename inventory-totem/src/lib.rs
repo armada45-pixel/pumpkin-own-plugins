@@ -12,7 +12,8 @@ use pumpkin_plugin_api::{
     world::{Sound, SoundCategory},
 };
 
-const TOTEM: &str = "minecraft:totem_of_undying";
+// The host returns registry keys without the "minecraft:" namespace.
+const TOTEM: &str = "totem_of_undying";
 
 struct InventoryTotem;
 
@@ -27,7 +28,8 @@ impl Plugin for InventoryTotem {
             version: env!("CARGO_PKG_VERSION").into(),
             authors: vec!["Mobilestars".into()],
             // Same text as the original plugin.yml.
-            description: "Makes the totem of undying works when it's anywhere in the inventory.".into(),
+            description: "Makes the totem of undying works when it's anywhere in the inventory."
+                .into(),
             dependencies: vec![],
             permissions: vec![],
         }

@@ -27,6 +27,17 @@ helmet, offhand.
   still uses a totem.
 - The player is found by entity id among online players (the event carries only the id).
 
+## Server requirements
+
+- A Pumpkin build whose Wasm host maps sounds by index (Pumpkin-MC/Pumpkin#4160). Without it `play-sound`
+  traps and the plugin stops handling events.
+- The build is unsigned: allow it for this plugin only in `pumpkin.toml`:
+
+  ```toml
+  [plugins.overrides.InventoryTotem]
+  allow_unsigned = true
+  ```
+
 ## Build
 
 ```
