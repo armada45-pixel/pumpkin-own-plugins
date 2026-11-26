@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["inventory-totem"]
+members = ["inventory-totem", "anvil-unlocker", "craftable-inv-frames", "click-mobs", "command-gui", "afk-pool"]
 
 [workspace.package]
 edition = "2024"

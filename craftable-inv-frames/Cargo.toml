@@ -1,0 +1,13 @@
+[package]
+name = "craftable-inv-frames"
+version = "2.4.2"
+edition.workspace = true
+license = "MIT AND GPL-3.0-or-later"
+description = "Invisible item frames for survival players. Rust port of CraftableInvFrames (a fork of SurvivalInvisiFrames by Techdoodle)."
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+pumpkin-plugin-api.workspace = true
+serde_yaml = "0.9"
