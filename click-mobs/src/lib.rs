@@ -714,11 +714,14 @@ fn build_command() -> Command {
             .suggest(OptionNames)
             .execute(Get),
     );
-    Command::new(&["clickmobs".into()], "Main command for ClickMobs.")
-        .then(CommandNode::literal("reload").execute(Reload))
-        .then(CommandNode::literal("path").execute(Path))
-        .then(get)
-        .then(set)
+    // The original's PaperCommandAdapter.buildRoot() puts every option command under a `config` literal.
+    Command::new(&["clickmobs".into()], "Main command for ClickMobs.").then(
+        CommandNode::literal("config")
+            .then(CommandNode::literal("reload").execute(Reload))
+            .then(CommandNode::literal("path").execute(Path))
+            .then(get)
+            .then(set),
+    )
 }
 
 // ---- plugin ----

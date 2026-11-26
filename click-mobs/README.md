@@ -24,7 +24,7 @@ Done = in the code and unit-tested or compiled; blocked = needs `HOST-API.md`.
       the player, one head is used, `entity.player.attack.weak` sound. No `clickmobs.place`: `no_permission`.
 - [x] Sneak + right-click a minecart (one rider) / boat (two) / chest boat (one) with a head in the main hand: the mob
       is put in the vehicle, metal/wood break sound.
-- [x] `/clickmobs` (permission `clickmobs.config`, default op): `path`, `reload`, `get <option>` (tab-complete of the
+- [x] `/clickmobs config` (permission `clickmobs.config`, default op): `path`, `reload`, `get <option>` (tab-complete of the
       option names), `set <language|check_update|per_mob_permissions|enable_dispensers> <value>`. Chat messages
       `config_path`, `config_reload`, `config_get`, `config_set` with the `&6[⚒] &a` prefix and the confirm chime.
 - [x] Permissions `clickmobs.pickup` (true), `clickmobs.place` (true), `clickmobs.config` (op) and the 168
@@ -44,7 +44,7 @@ Done = in the code and unit-tested or compiled; blocked = needs `HOST-API.md`.
   `custom_data.clickmobs.*`, not Bukkit's `PublicBukkitValues` (items are not interchangeable with the jar's, item 6).
 - **Riders and full inventory** refuse the pick up with `write_error` (the original stores riders, drops leftovers).
 - **No update check, no bStats** (no HTTP in the host; bStats is telemetry). `check_update` stays in the file.
-- **No `/reload` of the language on `language` change by editing the file**: use `/clickmobs reload`. `/clickmobs set`
+- **No `/reload` of the language on `language` change by editing the file**: use `/clickmobs config reload`. `/clickmobs config set`
   reloads the language itself, like the original's `onChange`.
 - **Config writes** (`set`) regenerate the whole file from the template, so hand-written comments are lost; values and
   the original's comments are kept. The original's library edits in place.
